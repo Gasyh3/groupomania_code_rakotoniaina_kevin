@@ -1,0 +1,39 @@
+.header {
+    background-color: #50B2C0;
+    width: 100%;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        width: 90%;
+        max-width: 1440px;
+        margin: auto;
+    }
+  
+    &__link {
+        width: 25%;
+    }
+    
+    &__logo {
+        width: 100%;
+        height: auto;
+    }
+
+    &__icon {
+        color : #FFF;
+        font-size : 20px;
+
+        &:hover {
+            color : #4E5166;
+        }
+    }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .header__link {
+        width: 50%;
+    }
+}

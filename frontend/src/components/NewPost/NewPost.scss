@@ -1,0 +1,53 @@
+.modale_background_overlay {
+    position: absolute;
+    width: 100%;
+    height: 600%;
+    background: linear-gradient(75deg, #FD2D01, #FFD7D7, #4E5166);
+    top: 0;
+    left: 0;
+}
+
+.newPost {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.startPost {
+    padding: 15px;
+    width: 100%;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #E6EAF2;
+
+    &:hover {
+        background-color: #D9E0EB;
+        transition: background-color 250ms;
+    }
+}
+
+
+
+/* remove default styles */
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+input,
+textarea {
+    font-size: 1rem;
+    border: none;
+}
+
+.altAttributeInput {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageInput+label {
+    cursor: pointer;
+}

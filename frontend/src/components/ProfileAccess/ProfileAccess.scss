@@ -1,0 +1,23 @@
+.profileCard {
+    border-radius: 9px;
+
+    &__avatar {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+    }
+
+    &__icon {
+        color: rgb(227, 227, 227);
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+   
+}
+

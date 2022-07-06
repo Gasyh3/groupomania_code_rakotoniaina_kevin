@@ -1,0 +1,41 @@
+
+.comment {
+    border-radius: 9px;
+    padding: 1px 10px;
+    background-color: #97E6F2;
+    flex-grow: 2;
+
+    &__wrapper {
+        display: flex;
+        gap: 10px;
+        padding: 10px 0;
+        margin-left: 10%;
+        margin-right: 10%;
+
+    }
+    
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__owner {
+        font-weight: bold;
+    }
+    
+    &__modifications {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.modifyCommentInput {
+    width: 90%;
+    border: 2px solid #37527C;
+    border-radius: 14px;
+    padding: 4px;
+}
+
+

@@ -1,0 +1,14 @@
+.comments {
+    border: none;
+    background: none;
+    margin-bottom: 2%;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.comments p {
+    font-weight: 500;
+}

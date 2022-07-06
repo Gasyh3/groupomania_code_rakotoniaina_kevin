@@ -1,0 +1,140 @@
+.post {
+    margin-left: 25%;
+    margin-right: 25%;
+    border : 3px solid transparent;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+    margin-bottom: 2%;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    &__owner {
+        display: flex;
+        align-items: flex-start;
+        
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    &__owner p {
+        margin-left: 10px;
+        font-weight: bold;
+    }
+
+    &__image {
+        margin: auto;
+        max-height: 50vh;
+        max-width: 100%;
+        align-self: center;
+    }
+}
+
+
+.numberOfLikes {
+    display: flex;
+    align-items: center;
+
+    &__circle {
+        border-radius: 50%;
+        background-color: #50B2C0;
+        width: 27px;
+        height: 27px;
+        display: inline-block;
+        text-align: center;
+        margin-right: 5px;
+        z-index: -1;
+    }
+    
+    &__thumb {
+        color: white;
+        vertical-align: bottom;
+        position: relative;
+        top: 1px;
+    }
+}
+
+
+.socialActions {
+    display: flex;
+    justify-content: space-around;
+
+    &__button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+    
+        &:hover  {
+            background-color: #d9e0eb;
+        }
+    }
+
+    &__icons {
+        margin: 0 10px;
+        color: #50B2C0;
+        height: 20px;
+    }
+}
+
+.commentInput {
+    display: flex;
+    gap: 5px;
+    margin: 2%;
+
+    &__button {
+        border: 2px solid #50B2C0;
+        background-color: #50B2C0;
+        border-radius: 14px;
+        padding: 4px;
+        cursor: pointer;
+        color: #fff;
+        
+        &:hover {
+            background-color: #fff;
+            color: #50B2C0;
+        } 
+    }
+    
+}
+
+.commentInput input:first-child {
+    width: 100%;
+    border-radius: 9px;
+    padding: 5px;
+    background-color: #e6eaf2;
+}
+
+.commentInput input:first-child:hover {
+    background-color: #d9e0eb;
+}
+
+
+.socialDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+.comment {
+    background-color: rgb(213, 213, 213);
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .post {
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+
+    .commentInput {
+        margin: 5%;
+    }
+}

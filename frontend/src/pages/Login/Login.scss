@@ -1,0 +1,124 @@
+.main {
+  width: 100%;
+}
+
+.nav {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+
+    &__links {
+      padding: 0.5rem 0;
+      margin: 5px 0;
+      text-decoration: none;
+      color: #1C1C1C;
+      width: 25%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 170px;
+
+      &--focus {
+        color: #7AC9D0;
+        border-bottom: 2px solid #B8DBD9;
+      }
+    }
+  }
+  
+  
+  .form {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    border : 3px solid transparent;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .form>* {
+    margin: 0.5rem 0;
+  }
+ 
+ label {
+  font-size: 16px;
+  }
+
+  .signin_password-reset:visited {
+    color: initial;
+  }
+
+  .password__forget {
+    font-size: 16px;
+  }
+
+  .input {
+    border-radius: 9px;
+    margin : 0;
+    padding: 10px;
+    background-color: #E8F0FE;
+    width: 250px;
+  }
+  
+  .signinButton,
+  .signupButton {
+    background-color: #50B2C0;
+    color: white;
+    width: 240px;
+    height: 40px;
+  }
+  
+  .signupButton {
+    margin-top: 2rem;
+  }
+  
+  .signinButton:hover,
+  .signupButton:hover {
+    background-color: #FCFAFA;
+    color: #50B2C0;
+  }
+ 
+  .passwordWarning {
+    color: red;
+    font-weight: bold;
+  }
+ 
+  form input {
+    border: 1px solid transparent;
+  }
+  
+  form input:focus:invalid {
+    border: 2px solid #699199;
+  }
+  
+  .inputValidation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__warningMessage {
+      color: red;
+      font-weight: bold;
+    }
+
+  }
+
+  .signupMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #091f43;
+  }
+  
+  @media screen and (max-width: 414px) {
+    .nav__links {
+      width: 50%;
+    }
+  }
