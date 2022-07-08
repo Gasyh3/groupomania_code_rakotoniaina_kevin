@@ -36,7 +36,7 @@ LOCK TABLES `comments` WRITE;
 INSERT INTO
   `comments`
 VALUES
-  (162, '115', 'Oh le petit chat 😍', '250'),(163, '114', 'Merci Michael', '250'),(164, '114', 'nan..', '251');
+  ('165', '119', 'Tu es un vendu Homer :p', '255'),(166, '117', 'Carter à raison', '255');
   /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 --
@@ -60,7 +60,7 @@ CREATE TABLE `likes` (
 INSERT INTO
   `likes`
 VALUES
-  (133, '106', '218'),(139, '110', '218'),(149, '106', '244'),(166, '113', '250'),(167, '115', '250'),(168, '114', '250'),(169, '116', '250'),(170, '116', '251');
+  (171, '117', '255');
   /*!40000 ALTER TABLE `likes` ENABLE KEYS */;
 UNLOCK TABLES;
 --
@@ -90,18 +90,25 @@ INSERT INTO
   `posts`
 VALUES
   (
-    250,
-    'Bonne semaine à tous',
-    'Vivement le weekend !',
-    'Monday-already.jpg1651558874157.jpg1651567359653.jpg',
-    113,
-    'un chat qui s\'ennui'
+    253,
+    'Mes origines', 
+    'Je suis franco-japonais', 
+    'post_louis.jpeg1657117252279.jpg',
+    117,
+    'undefined'
   ),(
-    251,
-    'Quelqu\'un a vu mon stylo ?',
-    'J\'ai perdu mon 4 couleurs',
-    NULL,
-    116,
+    255,
+    'Ouh pinaise',
+    'J\'adore être arbitre',
+    'homer_post_2.jpeg1657117788425.jpg',
+    118,
+    'undefined'
+  ),(
+    256,
+    'Chucky and Me',
+    'Il est beau non ?',
+    'carter_post_1.jpeg1657118340632.jpg',
+    119,
     'undefined'
   );
   /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
@@ -144,47 +151,29 @@ VALUES
     NULL,
     NULL
   ),(
-    110,
-    'Maxence',
-    'maxence.califano@gmail.com',
-    '$2b$10$QCnqT6PfKSr368jiToULu.Hd7nQTd9JWLHpLRFjrKTw7QTAWh3Hmu',
-    'r2.jpg1651149316411.jpg',
+    117,
+    'Louis San',
+    'louis.san@groupomania.com',
+    '$2b$10$6SPC5uE4Yt51.j8lnR6jDOv4f3yf.q3fBNYTXmCkaY89TdVDOhrda',
+    'louis.jpg1657116832256.jpg',
     NULL,
     NULL,
     NULL
   ),(
-    113,
-    'Michael scott',
-    'michael@groupomania.fr',
-    '$2b$10$0c/vmvxEf3COYgrsrK/I7.2MqFb7XMtIWcg/gESqDfqd6FQwUrd8S',
-    'michaelScott.jpg1651128491469.jpg',
+    118,
+    'Homer Simpson',
+    'homer@groupomania.com',
+    '$2b$10$mCGuai7nMf9rukszrzem7e8Ealig1QAQGIXkBYhrcKg14cKBNKPJu',
+    'homer.jpeg1657117483380.jpg',
     NULL,
     NULL,
     NULL
   ),(
-    114,
-    'Dwight Shrute',
-    'dwight@groupomania.fr',
-    '$2b$10$rbzImO.rPqEN5S2rzDxI8u/t2oLogYg3e6y/JcxWWwL6uvR2kjYLK',
-    'dwight.jpg1651128930189.jpg',
-    NULL,
-    NULL,
-    NULL
-  ),(
-    115,
-    'Angela Martin',
-    'angela@groupomania.fr',
-    '$2b$10$.DrUz/UHgOoaJ7Lm3bpWXOryVA6qKR56XMhdVskT7M5qGsHkuV2LG',
-    'angela.jpg1651129174536.jpg',
-    NULL,
-    NULL,
-    NULL
-  ),(
-    116,
-    'Jim Halpert',
-    'jim@groupomania.fr',
-    '$2b$10$vH1TT8QGxS0sotrPJ8nHi.hXR7PXLmB6haGS61cjZRJexUb1BJn4K',
-    'jim.jpg1651129510771.jpg',
+    119,
+    'Carter Williams',
+    'carter@groupomania.com',
+    '$2b$10$S601Rw8vi4GFjDYGB8xDt.1Hhg1jFYE0XTRICyjCBXjxy.4ELcR06',
+    'carter_pdp.jpeg1657118250436.jpg',
     NULL,
     NULL,
     NULL

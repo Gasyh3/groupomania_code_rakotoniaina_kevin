@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import Wave from "../../components/Wave/Wave";
 
 export default function Login() {
   const location = useLocation();
