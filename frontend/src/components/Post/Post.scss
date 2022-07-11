@@ -19,11 +19,26 @@
         
         gap: 10px;
         flex-wrap: wrap;
+
+        &:nth-child(1) {
+            align-items: center;
+        }
+
+        &--column {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__owner p {
         margin-left: 10px;
+        margin-bottom: 0;
         font-weight: bold;
+    }
+
+    &__date {
+        font-size: 12px;
+        color:#50B2C0;
     }
 
     &__image {

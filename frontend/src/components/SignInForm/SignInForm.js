@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
 
 export default function SignInForm(props) {
   //const [username, setUsername] = useState();
@@ -55,9 +54,6 @@ export default function SignInForm(props) {
           name={"password"}
           onChange={(e) => setpassword(e.target.value)}
         ></input>
-        <Link className="signin_password-reset" to={"../../password-reset"}>
-          <p className="password__forget">Mot de passe oublié ?</p>
-        </Link>
         <Button
           className={"signinButton"}
           onClick={signIn}

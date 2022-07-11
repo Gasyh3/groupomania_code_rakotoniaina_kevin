@@ -6,7 +6,6 @@ import PostModal from "../PostModal/PostModal";
 export default function NewPost(props) {
   const [title, setTitle] = useState();
   const [text, setText] = useState();
-  const [caption, setCaption] = useState();
   const [image, setImage] = useState({ preview: "", data: "" });
   const [isInEditMode, setEditMode] = useState(false);
 
@@ -27,7 +26,7 @@ export default function NewPost(props) {
   formData.append("title", title);
   formData.append("text", text);
   formData.append("image", image.data);
-  formData.append("caption", caption);
+
   /**
    * The post function is called when the user clicks the submit button. It sends a POST request to the
    * server with the form data. If the request is successful, the getAllPosts function is called to
@@ -42,7 +41,6 @@ export default function NewPost(props) {
     })
       .then((res) => {
         if (res.ok) props.getAllPosts();
-        //Reset img state to default
         const defaultImg = { preview: "", data: "" };
         setImage(defaultImg);
         toogleEditMode();
@@ -88,7 +86,6 @@ export default function NewPost(props) {
             image={image}
             setTitle={setTitle}
             setText={setText}
-            setCaption={setCaption}
             post={post}
             actionText="Créer un post"
           />

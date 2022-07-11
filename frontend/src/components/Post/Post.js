@@ -9,6 +9,7 @@ import { faThumbsUp, faMessage } from "@fortawesome/free-solid-svg-icons";
 
 import { useState, useEffect } from "react";
 import OptionsControl from "../OptionsControl/OptionsControl";
+import moment from "moment";
 
 export default function Post(props) {
   const [isInEditMode, setEditMode] = useState(false);
@@ -20,7 +21,6 @@ export default function Post(props) {
   const [comment, setComment] = useState();
   const [showCommentInput, setShowCommentInput] = useState(false);
   const [image, setImage] = useState({ preview: "", data: "" });
-  const [caption, setCaption] = useState(props.post.caption);
 
   const getFile = (e) => {
     const img = {
@@ -49,7 +49,6 @@ export default function Post(props) {
   formData.append("id", props.post.postID);
   formData.append("title", title);
   formData.append("text", text);
-  formData.append("caption", caption);
   formData.append("image", image.data);
 
   const modifyPost = () => {
@@ -81,7 +80,6 @@ export default function Post(props) {
       .then((res) => res.json())
       .then((likes) => SetNumberOfLikes(likes.numberOfLikes));
   };
-  //Comments
 
   const getAllComments = () => {
     fetch(`http://localhost:3001/api/comments/${props.post.postID}`, {
@@ -129,6 +127,7 @@ export default function Post(props) {
   useEffect(() => {
     getNumberOfLikes();
     getAllComments();
+    // eslint-disable-next-line
   }, []);
 
   if (isInEditMode) {
@@ -154,10 +153,8 @@ export default function Post(props) {
                 setTitle={setTitle}
                 text={props.post.text}
                 title={props.post.title}
-                caption={props.post.caption}
                 setText={setText}
                 post={modifyPost}
-                setCaption={setCaption}
                 actionText="Modifier le post"
               />
             </div>
@@ -171,7 +168,12 @@ export default function Post(props) {
                   avatar={props.post.avatarURL}
                   altText={`avatar de ${props.post.username}`}
                 />
-                <p>{props.post.username}</p>
+                <div className="post__owner--column">
+                  <p>{props.post.username}</p>
+                  <p className="post__date">
+                    {moment({}).format("MMM Do YYYY")}
+                  </p>
+                </div>
               </div>
               {props.username === props.post.username ||
               localStorage.getItem("privilege") === "1" ? (
@@ -185,9 +187,9 @@ export default function Post(props) {
               <h3>{props.post.title}</h3>
               <p>{props.post.text}</p>
               {props.post.mediaUrl != null ? (
+                // eslint-disable-next-line
                 <img
                   className="post__image"
-                  alt={props.post.caption}
                   src={`http://localhost:3001/images/${props.post.mediaUrl}`}
                 ></img>
               ) : (
