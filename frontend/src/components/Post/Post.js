@@ -62,7 +62,7 @@ export default function Post(props) {
       setEditMode();
     });
   };
-  const likeUnlike = () => {
+  const likeAPost = () => {
     fetch(`http://localhost:3001/api/likes/${props.post.postID}`, {
       method: "POST",
       credentials: "include",
@@ -171,7 +171,7 @@ export default function Post(props) {
                 <div className="post__owner--column">
                   <p>{props.post.username}</p>
                   <p className="post__date">
-                    {moment({}).format("MMM Do YYYY")}
+                    {moment(props.post.published_at).format("MMM Do YYYY")}
                   </p>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function Post(props) {
           </div>
         </div>
         <div className="socialActions">
-          <button className="socialActions__button" onClick={likeUnlike}>
+          <button className="socialActions__button" onClick={likeAPost}>
             <FontAwesomeIcon
               className="socialActions__icons"
               icon={faThumbsUp}

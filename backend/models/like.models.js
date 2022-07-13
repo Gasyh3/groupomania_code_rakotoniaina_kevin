@@ -1,4 +1,4 @@
-const sql = require("./db");
+const dbSql = require("./db");
 
 //constructeur
 
@@ -7,13 +7,12 @@ const Like = function (like) {
 };
 
 Like.create = (like, result) => {
-  sql.query("INSERT INTO likes SET ?", like, (err, res) => {
-    if (err) {
-      console.log("error: ", err);
-      result(err, null);
+  dbSql.query("INSERT INTO likes SET ?", like, (error, response) => {
+    if (error) {
+      result(error, null);
       return;
     }
-    console.log("like: ", { id: res.insertId, ...like });
+    console.log("like: ", { id: response.insertId, ...like });
     result(null, {
       postId: like.postId,
     });

@@ -1,4 +1,4 @@
-const sql = require("./db");
+const dbSql = require("./db");
 
 const Post = function (post) {
   (this.userId = post.userId), (this.title = post.title);
@@ -8,10 +8,9 @@ const Post = function (post) {
 };
 
 Post.create = (newPost, result) => {
-  sql.query("INSERT INTO posts SET ?", newPost, (err, res) => {
-    if (err) {
-      console.log("error: ", err);
-      result(err, null);
+  dbSql.query("INSERT INTO posts SET ?", newPost, (error, response) => {
+    if (error) {
+      result(error, null);
       return;
     }
     result(null, {
@@ -23,13 +22,12 @@ Post.create = (newPost, result) => {
 };
 
 Post.modifyPost = (postModifications, result) => {
-  sql.query(
+  dbSql.query(
     `UPDATE posts SET ? WHERE id = "${postModifications.id}"`,
     postModifications,
-    (err, res) => {
-      if (err) {
-        console.log("error: ", err);
-        result(err, null);
+    (error, response) => {
+      if (error) {
+        result(error, null);
         return;
       }
       result(null, { ...postModifications });
