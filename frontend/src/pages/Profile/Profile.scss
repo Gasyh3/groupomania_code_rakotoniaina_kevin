@@ -108,7 +108,7 @@
 
     &__text {
         color: #FFF;
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 .deleteButton {
@@ -117,7 +117,7 @@
     color: #FFF;
     margin: 30px 0;
     padding: 2%;
-    width: 50%;
+    width: 20%;
     font-size: 20px;
 
     &:hover {
@@ -130,7 +130,7 @@
     border-color: #258916;
     color: #FFF;
     padding: 2%;
-    width: 50%;
+    width: 20%;
     font-size: 20px;
 }
 
@@ -152,21 +152,22 @@
     background-color: #a0252e;
 }
 
-.deleteWarning_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid transparent;
-    border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-left : 10%;
-    margin-right : 10%;
-}
 
 .deleteWarning {
     color: #D1515A;
-    font-size: 30px;
+    font-size: 20px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid transparent;
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-left : 10%;
+        margin-right : 10%;
+    }
 }
 
 .title {
@@ -219,11 +220,52 @@
 }
 
 
-
-@media screen and (max-width:576px) {
-
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .editProfile input[type="text"],
     .editProfile input[type="password"] {
         width: 80%;
+    }
+
+    .profile__info {
+        margin-left: 5%;
+        margin-right: 5%;
+
+        &--row {
+            flex-direction: column;
+            width: 80%;
+        }
+    }
+
+    .profile__edit {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .profile_buttonsContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .deleteBlock {
+        margin-left: 5%;
+        margin-right: 5%;
+        
+        &--text {
+            padding: 5%;
+            font-size: 20px;
+        }
+    }
+
+    .cancelDeleteButton {
+        width: 50%;
+    }
+
+    .deleteButton {
+        width: 50%; 
+    }
+
+    .deleteWarning__container {
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }

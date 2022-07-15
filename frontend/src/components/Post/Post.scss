@@ -38,7 +38,7 @@
 
     &__date {
         font-size: 12px;
-        color:#50B2C0;
+        color:#FD2D01;
     }
 
     &__image {
@@ -86,7 +86,7 @@
         border-radius: 5px;
     
         &:hover  {
-            background-color: #d9e0eb;
+            background-color: #D9E0EB;
         }
     }
 
@@ -111,7 +111,7 @@
         color: #fff;
         
         &:hover {
-            background-color: #fff;
+            background-color: #FFF;
             color: #50B2C0;
         } 
     }
@@ -122,11 +122,11 @@
     width: 100%;
     border-radius: 9px;
     padding: 5px;
-    background-color: #e6eaf2;
+    background-color: #E6EAF2;
 }
 
 .commentInput input:first-child:hover {
-    background-color: #d9e0eb;
+    background-color: #D9E0EB;
 }
 
 
@@ -146,7 +146,7 @@
     .post {
         margin-left: 5%;
         margin-right: 5%;
-
+        margin-top: 5%;
     }
 
     .commentInput {

@@ -6,7 +6,7 @@
 .createNewPost {
     position: absolute;
     z-index: 1;
-    background-color: white;
+    background-color: #FFF;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -42,11 +42,11 @@
 
 .closeButton {
     font-size: larger;
-    color: #d1515a;
+    color: #FD2D01;
     cursor: pointer;
     
     &:hover {
-        color: #a23d44;
+        color: #A23D44;
     }
 }
 

@@ -7,7 +7,6 @@ import SignInForm from "./components/SignInForm/SignInForm";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
-import NewPassword from "./pages/NewPassword/NewPassword";
 import "./styles/normalize.css";
 
 function App() {
@@ -55,7 +54,6 @@ function App() {
           />
           <Route path="signup" element={<SignUp />} />
         </Route>
-        <Route path="reset-password/:token/:id" element={<NewPassword />} />
       </Routes>
     </div>
   );

@@ -240,7 +240,7 @@ function Profile(props) {
                 />
               </div>
               {displayDeleteWarning ? (
-                <div className="deleteWarning_container">
+                <div className="deleteWarning__container">
                   <strong className="deleteWarning">
                     Voulez-vous vraiment supprimer votre compte Groupomania ?
                   </strong>
