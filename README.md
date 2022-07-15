@@ -27,7 +27,7 @@ Pour lancer l'application, il faudra installer :
 
 ## Lancement
 
-1. Cloner le projet avec la commande `git clone https://github.com/MaxenceCalifano/groupomania_code_rakotoniaina_kevin.git`
+1. Cloner le projet avec la commande `git clone https://github.com/Gasyh3/groupomania_code_rakotoniaina_kevin.git`
 
 2. Lancer `npm install` dans les dossier backend et frontend
 
