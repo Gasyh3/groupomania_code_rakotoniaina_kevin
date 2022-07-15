@@ -1,37 +1,40 @@
-# About
+# À Propos
 
+**Application intranet de Groupomania**
 
-**Groupomania** is a corporate social network built with React for the frontend part, NodeJs and Express for the backend and has a MySQL database.
+La création du réseau social interne de Groupomania est le dernier projet de la formation Développeur Web de chez OpenClassrooms. Il a été construit avec :
 
-It is my 7th and last project from the Web Developer training program of OpenClassRooms.
+- Backend : Node.js et Express.js
+- Base de donnée : MySQL
+- Frontend: React et Sass
 
-### Features
+### Cette application permet de :
 
-- The app allows you to create an account, login and logout
-- Modify and delete the account
-- Ask a new password if you forget it, and create a new one
-- Create posts with text and image content, modify and delete them
--  Leave comments, modify and delete them
+- Créer un compte, de se connecter et de se déconnecter du réseau social
+- Publier un post avec une image ou non et pouvoir le modifier
+- Commenter et/ou aimer des posts
 
-![Capture-groupomania](https://user-images.githubusercontent.com/48595795/166098889-2c00b52e-98d7-4aac-8122-4ee581f33d96.PNG)
+#### L'administrateur a :
 
-## What you will need
+- Le droit de modification et de suppression sur tous les posts du réseau social
 
-To run Groupomania you'll need to have installed on your computer :
+## Pré-requis :
+
+Pour lancer l'application, il faudra installer :
+
 - NodeJS
 - MySQL
 
-## How to run it
+## Lancement
 
-1. Clone it with the command `git clone https://github.com/MaxenceCalifano/Groupomania.git`
+1. Cloner le projet avec la commande `git clone https://github.com/MaxenceCalifano/groupomania_code_rakotoniaina_kevin.git`
 
-2. Run `npm install` in each frontend and backend folder
+2. Lancer `npm install` dans les dossier backend et frontend
 
-3. In the backend folder, find `.env` file and type your MySQL user and password in `dbUser` and `dbPassword`
+3. Dans le dossier backend, trouver le fichier `.env` et rentrer votre user dans `dbUser`et votre mot de passe dans `dbPassword`
 
-4. Open the MySQL CLI, login and create empty groupomania database `CREATE DATABASE groupomania;` and use it `USE groupomania;`
+4. Ouvrez MySQL Command-Line Client, connectez-vous et créez une base de donnée vide groupomania `CREATE DATABASE groupomania;` et l'utiliser `USE groupomania;`
 
-5. Import groupomania database, to do so you will need to go to MySQL server folder on your computer, which on Windows will be at something like `C:\Program Files\MySQL\MySQL Server 8.0\bin`, past `mysql -u username -p groupomania < groupomania_demo.sql`*
+5. Importer la base donnée groupomania fourni dans les livrables, avec la commande `mysql -u username -p groupomania < groupomania_demo.sql`
 
-6. : Finnaly run `npm start` in the frontend folder and `node server` in the backend folder
-# groupomania_code_rakotoniaina_kevin
+6. Enfin lancer `npm start` dans le dossier backend et ensuite dans le dossier frontend.
