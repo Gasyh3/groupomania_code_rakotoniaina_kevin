@@ -2,10 +2,10 @@ const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 dotenv.config();
 
+/* A middleware that checks if the user is authenticated. */
+
 module.exports = (req, res, next) => {
   try {
-   // console.log(req.cookies)
-
     const token = req.cookies.access_token;
     const decodedToken = jwt.verify(token, "token");
     const userId = decodedToken.userId;
