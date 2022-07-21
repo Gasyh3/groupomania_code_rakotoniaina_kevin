@@ -1,5 +1,6 @@
 const multer = require("multer");
 
+/* A constant that is an object that has the key of the file type and the value of the file extension. */
 const MIME_TYPES = {
   "image/jpg": "jpg",
   "image/jpeg": "jpg",
@@ -7,6 +8,7 @@ const MIME_TYPES = {
   "image/gif": "gif",
 };
 
+/* Creating a storage object that is going to be used by multer. */
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
     callback(null, "images");

@@ -3,7 +3,6 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 /* A middleware that checks if the user is authenticated. */
-
 module.exports = (req, res, next) => {
   try {
     const token = req.cookies.access_token;
