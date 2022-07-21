@@ -45,7 +45,7 @@ exports.getAllPostComments = (req, res) => {
   );
 };
 
-/* A function that is called when the route /comments/:id is called. It is used to get all the comments
+/* A function that is called when the route /comments/:id is called. It is used to modify comments
 of a post. */
 exports.modifyComment = (req, res) => {
   dbSql.query(
@@ -79,7 +79,7 @@ exports.modifyComment = (req, res) => {
   );
 };
 
-/* A function that is called when the route /comments/:id is called. It is used to get all the comments
+/* A function that is called when the route /comments/:id is called. It is used to delete comments
 of a post. */
 exports.deleteComment = (req, res) => {
   dbSql.query(

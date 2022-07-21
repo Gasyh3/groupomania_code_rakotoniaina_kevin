@@ -14,7 +14,7 @@ const likesRoutes = require("./routes/like.routes");
 dotenv.config();
 
 const app = express();
-app.use(cookieParser()); // Pour accéder aux cookies
+app.use(cookieParser());
 
 const corsOptions = {
   origin: true,
@@ -33,11 +33,11 @@ app.use(express.json()); //Intercepte toutes les requetes qui ont comme content-
 
 app.use("/images", express.static(path.join(__dirname, "images"))); // Sert les images quand une requete est faites au dossier images
 
-app.use("/api/auth", userRoutes); // A chaque fois que l'ont va à api/auth, utiliser userRoutes
+app.use("/api/auth", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/likes", likesRoutes);
 app.get("/", (req, res) => {
-  res.json({ message: "ça marche" });
+  res.json({ message: "OK" });
 });
 module.exports = app;
