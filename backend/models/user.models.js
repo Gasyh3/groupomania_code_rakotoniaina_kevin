@@ -1,16 +1,18 @@
 const req = require("express/lib/request");
 const dbSql = require("./db");
 
-//constructeur
-
+/**
+ * It creates a new user object with the given username, email, password, and avatarUrl
+ * @param user - This is the user object that is passed in when the User object is created.
+ */
 const User = function (user) {
-  //this.uuid = user.uuid,
   this.username = user.username;
   this.email = user.email;
   this.password = user.password;
   this.avatarUrl = user.avatarUrl;
 };
 
+/* It creates a new user object with the given username, email, password, and avatarUrl */
 User.create = (newUser, result) => {
   dbSql.query("INSERT INTO users SET ?", newUser, (error, response) => {
     if (error) {
@@ -22,6 +24,7 @@ User.create = (newUser, result) => {
   });
 };
 
+/* A function that is used to find a user by email. */
 User.findOne = (email, result) => {
   dbSql.query(
     `SELECT * FROM users WHERE email = ?`,
@@ -38,6 +41,7 @@ User.findOne = (email, result) => {
   );
 };
 
+/* Updating the user in the database. */
 User.modifyUser = (userModifications, result) => {
   dbSql.query(
     `UPDATE users SET ? WHERE id = "${userModifications.id}"`,
@@ -51,4 +55,5 @@ User.modifyUser = (userModifications, result) => {
     }
   );
 };
+
 module.exports = User;

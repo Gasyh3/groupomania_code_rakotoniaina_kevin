@@ -1,5 +1,9 @@
 const dbSql = require("./db");
 
+/**
+ * It takes a post object as an argument and returns a new Post object with the same properties
+ * @param post - This is the post object that is passed in from the controller.
+ */
 const Post = function (post) {
   (this.userId = post.userId), (this.title = post.title);
   this.text = post.text;
@@ -7,6 +11,7 @@ const Post = function (post) {
   this.published_at = post.published_at;
 };
 
+/* Creating a new post in the database. */
 Post.create = (newPost, result) => {
   dbSql.query("INSERT INTO posts SET ?", newPost, (error, response) => {
     if (error) {
@@ -21,6 +26,7 @@ Post.create = (newPost, result) => {
   });
 };
 
+/* Updating the post in the database. */
 Post.modifyPost = (postModifications, result) => {
   dbSql.query(
     `UPDATE posts SET ? WHERE id = "${postModifications.id}"`,
