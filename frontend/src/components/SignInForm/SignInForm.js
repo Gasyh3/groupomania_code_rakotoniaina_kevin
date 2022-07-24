@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 import Button from "../Button/Button";
 
 export default function SignInForm(props) {
-  //const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setpassword] = useState();
   const [unauthorizedMessage, setUnauthorizedMessage] = useState("");

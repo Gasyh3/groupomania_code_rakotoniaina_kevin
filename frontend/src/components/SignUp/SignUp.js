@@ -4,10 +4,10 @@ import PasswordMeter from "../PasswordMeter/PasswordMeter";
 import Button from "../Button/Button";
 import InputValidation from "../InputValidation/InputValidation";
 
-export default function SignUp() {
+export default function SignUp(props) {
   const [username, setUsername] = useState();
   const [email, setEmail] = useState();
-  const [password, setpassword] = useState("");
+  const [password, setPassword] = useState("");
   const [repeatedPassword, setRepetedPassword] = useState();
   const [image, setImage] = useState({ preview: "", data: "" });
   const [message, setMessage] = useState();
@@ -117,7 +117,7 @@ export default function SignUp() {
           labelText="Mot de passe"
           id="password"
           errorMessage="Veuillez renseigner un mot de passe"
-          setValue={setpassword}
+          setValue={setPassword}
           setInputsChecks={setInputsChecks}
           inputsChecks={inputsChecks}
           checkPasswords={checkPasswords}
