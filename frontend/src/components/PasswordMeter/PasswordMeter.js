@@ -22,6 +22,9 @@ export default function PasswordStrengthMeter(props) {
         return "Weak";
     }
   };
+
+  /* A hook that is called after every render. It is used to check if the password is secure enough. */
+
   useEffect(() => {
     if (props.checkSecurity) {
       props.checkSecurity(testedPassword.score);

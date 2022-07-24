@@ -171,7 +171,9 @@ export default function Post(props) {
                 <div className="post__owner--column">
                   <p>{props.post.username}</p>
                   <p className="post__date">
-                    {moment(props.post.published_at).format("MMM Do YYYY")}
+                    {moment(props.post.published_at)
+                      .startOf("second")
+                      .fromNow()}
                   </p>
                 </div>
               </div>

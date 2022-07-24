@@ -5,6 +5,12 @@ import "./Comment.scss";
 import Avatar from "../Avatar/Avatar";
 import OptionsControl from "../OptionsControl/OptionsControl";
 
+/**
+ * It renders a comment with an avatar, a username, a text, and an option to modify or delete the
+ * comment
+ * @param props - the props that are passed to the component
+ * @returns A component that displays a comment.
+ */
 export default function Comment(props) {
   const [comment, setComment] = useState();
   const [isInEditMode, setEditMode] = useState(false);

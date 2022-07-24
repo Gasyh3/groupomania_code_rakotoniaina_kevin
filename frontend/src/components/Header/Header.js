@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 
+/**
+ * It returns a div with a class of header, which contains a div with a class of header__content, which
+ * contains an a tag with a class of header__link, which contains an img tag with a class of
+ * header__logo, which contains the logo image
+ * @param props - an object that contains all the props that were passed to the component.
+ * @returns A div with a className of header.
+ */
 export default function Header(props) {
   return (
     <div className="header">
