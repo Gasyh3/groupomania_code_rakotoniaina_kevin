@@ -55,13 +55,13 @@ exports.modifyPost = (req, res) => {
   dbSql.query(
     `SELECT * FROM posts WHERE id = ?`,
     req.body.id,
-    (err, response) => {
+    (error, response) => {
       if (error) {
         result(error, null);
         return;
       }
 
-      if (req.userID !== response[0].userID) {
+      if (req.userId != response[0].userId) {
         //Compare id in the request with id of the post
         res.status(401).json({
           message: "Vous n'êtes pas autorisé à modifier ce post.",
@@ -116,7 +116,7 @@ exports.deletePost = (req, res) => {
           req.body.id,
           (error) => {
             if (error) {
-              result(err, null);
+              result(error, null);
               return;
             }
           }
