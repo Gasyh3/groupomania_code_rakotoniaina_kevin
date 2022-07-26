@@ -18,6 +18,7 @@ export default function Comment(props) {
   function toogleEditMode() {
     setEditMode(!isInEditMode);
   }
+
   const modifyComment = () => {
     fetch(`http://localhost:3001/api/comments/${props.postId}`, {
       method: "PUT",

@@ -154,7 +154,7 @@ export default function Post(props) {
                 text={props.post.text}
                 title={props.post.title}
                 setText={setText}
-                post={modifyPost}
+                post={() => modifyPost()}
                 actionText="Modifier le post"
               />
             </div>

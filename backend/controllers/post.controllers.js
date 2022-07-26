@@ -60,9 +60,7 @@ exports.modifyPost = (req, res) => {
         result(error, null);
         return;
       }
-
-      if (req.userId != response[0].userId) {
-        //Compare id in the request with id of the post
+      if (req.userId !== response[0].userID) {
         res.status(401).json({
           message: "Vous n'êtes pas autorisé à modifier ce post.",
         });
@@ -105,10 +103,12 @@ exports.deletePost = (req, res) => {
         result(error, null);
         return;
       }
+      console.log(req.userId);
+      console.log(response[0].userID);
 
       if (req.userPrivilege == 1 || req.userId == response[0].userID) {
         fs.unlink(`images/${response[0].mediaUrl}`, () =>
-          console.log("l'image du post a été supprimer.")
+          console.log("le post du post a été supprimer.")
         );
         //Delete all the comments
         dbSql.query(
