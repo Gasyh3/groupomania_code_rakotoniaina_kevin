@@ -60,11 +60,8 @@ exports.modifyPost = (req, res) => {
         result(error, null);
         return;
       }
-      if (req.userId !== response[0].userID) {
-        res.status(401).json({
-          message: "Vous n'êtes pas autorisé à modifier ce post.",
-        });
-      } else {
+
+      if (req.userPrivilege == 1 || req.userId == response[0].userID) {
         let dt = moment().format("YYYY-MM-DD HH:mm:ss");
         const postModifications = {
           id: req.body.id,
@@ -87,6 +84,10 @@ exports.modifyPost = (req, res) => {
             });
           else res.send(data);
         });
+      } else {
+        res.status(401).json({
+          message: "Vous n'êtes pas autorisé à modifier ce post.",
+        });
       }
     }
   );
@@ -94,7 +95,6 @@ exports.modifyPost = (req, res) => {
 
 /* This function is called when the user is requesting to delete a post. */
 exports.deletePost = (req, res) => {
-  // First check if the request comes from the post owner
   dbSql.query(
     `SELECT * FROM posts WHERE id = ?`,
     req.body.id,
@@ -103,8 +103,6 @@ exports.deletePost = (req, res) => {
         result(error, null);
         return;
       }
-      console.log(req.userId);
-      console.log(response[0].userID);
 
       if (req.userPrivilege == 1 || req.userId == response[0].userID) {
         fs.unlink(`images/${response[0].mediaUrl}`, () =>

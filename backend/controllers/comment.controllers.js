@@ -57,11 +57,7 @@ exports.modifyComment = (req, res) => {
         return;
       }
 
-      if (req.userId != response[0].userId) {
-        res.status(401).json({
-          message: "Vous n'êtes pas autorisé à modifier ce commentaire.",
-        });
-      } else {
+      if (req.userId == response[0].userId) {
         const commentModifications = {
           id: req.body.id,
           text: req.body.text,
@@ -73,6 +69,10 @@ exports.modifyComment = (req, res) => {
                 "Une erreur s'est produit à la modification du commentaire.",
             });
           else res.send(data);
+        });
+      } else {
+        res.status(401).json({
+          message: "Vous n'êtes pas autorisé à modifier ce commentaire.",
         });
       }
     }
