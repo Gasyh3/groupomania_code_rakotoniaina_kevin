@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
+/**
+ * It takes in props, and returns a div with a label, an input, and a paragraph
+ * @param props - {
+ * @returns A function that returns a div with a label, input and a p tag.
+ */
 function InputWithvalidation(props) {
   const [isValid, setIsValid] = useState(true);
-
-  // Execute checkPassword only when the component has the prop
   const checkPasswords = () => {
     if (props.checkPasswords !== undefined) {
       const checkPasswords = props.checkPasswords;

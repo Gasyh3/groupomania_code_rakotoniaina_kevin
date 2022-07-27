@@ -71,7 +71,6 @@ export default function SignUp(props) {
 
   useEffect(
     () => {
-      //Check if all required inputs are populated
       if (
         Object.values(inputsChecks).every(Boolean) &&
         passwordDifferenceMessage === ""

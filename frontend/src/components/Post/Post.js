@@ -1,16 +1,19 @@
 import React from "react";
 import "./Post.scss";
-
 import Avatar from "../Avatar/Avatar";
 import PostModal from "../PostModal/PostModal";
 import Comments from "../Comments/Comments";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faMessage } from "@fortawesome/free-solid-svg-icons";
-
 import { useState, useEffect } from "react";
 import OptionsControl from "../OptionsControl/OptionsControl";
 import moment from "moment";
 
+/**
+ * It renders a post with its comments and likes
+ * @param props - the props that are passed to the component
+ * @returns A post with a title, text, image, number of likes, comments, and a comment input.
+ */
 export default function Post(props) {
   const [isInEditMode, setEditMode] = useState(false);
   const [title, setTitle] = useState(props.post.title);
@@ -55,7 +58,6 @@ export default function Post(props) {
     fetch("http://localhost:3001/api/posts", {
       method: "PUT",
       credentials: "include",
-      //headers: { "Content-Type": "application/json" },
       body: formData,
     }).then(() => {
       props.getAllPosts();

@@ -191,7 +191,6 @@ exports.modifyUser = (req, res) => {
 
           if (req.file !== undefined) {
             userModifications.avatarUrl = req.file.filename;
-            //Delete previous avatar image file
             dbSql.query(
               `SELECT avatarURL FROM users WHERE id = ?`,
               [req.userId],
@@ -235,7 +234,6 @@ exports.modifyUser = (req, res) => {
 
 /* It deletes the user and all the data associated with it. */
 exports.deleteUser = (req, res) => {
-  //Delete user avatar file
   dbSql.query(
     `SELECT avatarURL FROM users WHERE id = ?`,
     [req.userId],
@@ -251,7 +249,6 @@ exports.deleteUser = (req, res) => {
       }
     }
   );
-  // Delete all data associated with the user
   dbSql.query(`DELETE FROM likes WHERE userId = ?`, [req.userId], (error) => {
     if (error) {
       result(err, null);
@@ -274,8 +271,6 @@ exports.deleteUser = (req, res) => {
       return;
     }
   });
-
-  // Then delete the user
   dbSql.query(`DELETE FROM users WHERE id = ?`, [req.userId], (error) => {
     if (error) {
       result(err, null);

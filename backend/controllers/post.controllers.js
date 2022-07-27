@@ -69,7 +69,6 @@ exports.modifyPost = (req, res) => {
           text: req.body.text,
           published_at: dt,
         };
-        //check if post has media or not
         if (req.file !== undefined) {
           fs.unlink(`images/${response[0].mediaUrl}`, () =>
             console.log("l'ancienne photo a été changé.")
@@ -108,7 +107,6 @@ exports.deletePost = (req, res) => {
         fs.unlink(`images/${response[0].mediaUrl}`, () =>
           console.log("le post du post a été supprimer.")
         );
-        //Delete all the comments
         dbSql.query(
           `DELETE FROM comments WHERE postId = ?`,
           req.body.id,
@@ -119,7 +117,6 @@ exports.deletePost = (req, res) => {
             }
           }
         );
-        //Delete all the likes
         dbSql.query(
           `DELETE FROM likes WHERE postId = ?`,
           req.body.id,
@@ -130,8 +127,6 @@ exports.deletePost = (req, res) => {
             }
           }
         );
-
-        //then delete the posts
         dbSql.query(`DELETE FROM posts WHERE id = ?`, req.body.id, (error) => {
           if (error) {
             result(error, null);

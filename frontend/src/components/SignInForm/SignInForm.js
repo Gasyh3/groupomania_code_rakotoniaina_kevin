@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../Button/Button";
 
+/**
+ * It takes a props object as a parameter, it uses the useState hook to create a state for the email,
+ * password and unauthorizedMessage, it uses the useNavigate hook to navigate to the home page, it has
+ * a signIn function that sends a POST request to the server to sign in, and it returns a form with an
+ * email input, a password input, a sign in button and a message that is displayed when the user enters
+ * a wrong email or password
+ * @param props - the props that are passed to the component
+ * @returns A form with an email input, a password input and a button.
+ */
 export default function SignInForm(props) {
   const [email, setEmail] = useState();
   const [password, setpassword] = useState();

@@ -1,10 +1,13 @@
 import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
+/**
+ * It renders a div with two links and an outlet
+ * @returns A function that returns a div with a nav and an outlet.
+ */
 export default function Login() {
   const location = useLocation();
 
-  // console.log(location.pathname) "/login/signup"
   return (
     <div className="main">
       <div className="nav">

@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ProfileAccess.scss";
 
+/**
+ * It fetches the avatar of the user from the database and displays it on the profile page
+ * @param props - the props that are passed to the component
+ * @returns The avatar of the user.
+ */
 export default function ProfileAccess(props) {
   const [avatar, setavatar] = useState();
 

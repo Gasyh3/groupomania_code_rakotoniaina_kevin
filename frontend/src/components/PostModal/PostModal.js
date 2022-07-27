@@ -4,6 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import "./PostModal.scss";
 
+/**
+ * It's a modal that allows the user to create a new post or edit an existing one
+ * @param props - the props that are passed to the component
+ * @returns A modal that allows the user to create a new post.
+ */
 export default function PostModale(props) {
   const toogleEditModeOnPressEnter = (e) => {
     if (e.code === "Enter") {

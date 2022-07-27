@@ -2,6 +2,12 @@ import React, { useEffect } from "react";
 import zxcvbn from "zxcvbn";
 import "./PasswordMeter.scss";
 
+/**
+ * It takes a password as a prop, uses the zxcvbn library to test the password, and then returns a
+ * progress bar with a label that indicates the strength of the password
+ * @param props - The props that are passed to the component.
+ * @returns A component that displays the strength of a password.
+ */
 export default function PasswordStrengthMeter(props) {
   const password = props.password;
   const testedPassword = zxcvbn(password);
@@ -22,8 +28,6 @@ export default function PasswordStrengthMeter(props) {
         return "Weak";
     }
   };
-
-  /* A hook that is called after every render. It is used to check if the password is secure enough. */
 
   useEffect(() => {
     if (props.checkSecurity) {

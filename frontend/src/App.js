@@ -13,7 +13,6 @@ function App() {
   const [username, setUsername] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Check if user is loggedin get his username
   useEffect(() => {
     if (localStorage.getItem("loggedInUser")) {
       setIsLoggedIn(true);

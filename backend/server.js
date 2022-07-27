@@ -1,6 +1,4 @@
-// Lancer le server : nodemon server
-
-const http = require("http"); //appel le package http de node
+const http = require("http");
 const app = require("./app");
 
 const normalizePort = (val) => {
@@ -39,7 +37,7 @@ const errorHandler = (error) => {
   }
 };
 
-const server = http.createServer(app); //fonction app qui contient express recevra les requetes et y répondra
+const server = http.createServer(app);
 
 server.on("error", errorHandler);
 server.on("listening", () => {
@@ -48,5 +46,4 @@ server.on("listening", () => {
   console.log("Listening on " + bind);
 });
 
-
-server.listen(port); // On dit au server d'écouter soit le port par défaut, soit le port 3000
+server.listen(port);

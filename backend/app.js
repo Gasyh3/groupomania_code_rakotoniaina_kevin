@@ -27,12 +27,10 @@ app.use(
     crossOriginResourcePolicy: false,
     hidePoweredBy: true,
   })
-); //Appel tous les middleware d'Helmet mais autorise CORS
+);
 
-app.use(express.json()); //Intercepte toutes les requetes qui ont comme content-type application/json et met leur body à disposition
-
-app.use("/images", express.static(path.join(__dirname, "images"))); // Sert les images quand une requete est faites au dossier images
-
+app.use(express.json());
+app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/api/auth", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);

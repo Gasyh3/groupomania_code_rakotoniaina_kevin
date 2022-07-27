@@ -6,6 +6,12 @@ import "./Posts.scss";
 import Post from "../../components/Post/Post";
 import NewPost from "../../components/NewPost/NewPost";
 
+/**
+ * It fetches all the posts from the database, and then displays them on the page
+ * @param props - This is the props that are passed to the component.
+ * @returns A div with a div with a NewPost component and a Post component for each post in the posts
+ * array.
+ */
 export default function Posts(props) {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();

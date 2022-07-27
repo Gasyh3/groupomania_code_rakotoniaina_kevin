@@ -8,6 +8,11 @@ import PasswordMeter from "../../components/PasswordMeter/PasswordMeter";
 import Button from "../../components/Button/Button";
 import "./Profile.scss";
 
+/**
+ * It displays the user's profile, and allows him to modify it
+ * @param props - the props that are passed to the component
+ * @returns A component that displays the user's profile.
+ */
 function Profile(props) {
   const [username, setUsername] = useState();
   const [avatar, setavatar] = useState();
@@ -64,7 +69,7 @@ function Profile(props) {
     }).then((resp) => {
       if (resp.ok) {
         function goToSignup() {
-          logout(); // remove cookie and localStorage
+          logout();
           navigate("/login/signUp");
         }
         setUserDeletedMessage(
